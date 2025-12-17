@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRST LEGO League Florida State Championship 2026 | UNEARTHED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #00A0B0;
+            --accent: #F7B801;
+            --dark: #000000;
+            --light: #F4F4F9;
+            --orange: #E85D2F;
+            --teal: #00A0B0;
+            --yellow: #F7B801;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0,0,0,0.05) 50px, rgba(0,0,0,0.05) 52px);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 1.5rem;
+            max-width: 1200px;
+        }
+
+        .logo-section {
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 var(--orange),
+                         6px 6px 0 var(--teal);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-detail {
+            background: var(--dark);
+            padding: 1.2rem 1.8rem;
+            border-radius: 15px;
+            border: 4px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+
+        .hero-detail:hover {
+            background: var(--orange);
+            border-color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-detail-label {
+            font-size: 0.9rem;
+            color: var(--yellow);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-detail-value {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .hero-detail:hover .hero-detail-label {
+            color: var(--dark);
+        }
+
+        .hero-detail:hover .hero-detail-value {
+            color: white;
+        }
+
+        .cta-container {
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--dark);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--yellow);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--teal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--orange);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--teal);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+
+        .info-card p, .info-card ul {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .info-card ul {
+            list-style-position: inside;
+            margin-top: 1rem;
+        }
+
+        .info-card li {
+            margin: 0.5rem 0;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--orange);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 4px solid var(--dark);
+        }
+
+        .highlight-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box ul {
+            list-style-position: inside;
+            line-height: 1.8;
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .schedule-day {
+            background: var(--teal);
+            color: white;
+            padding: 1rem 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+        }
+
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1.5rem;
+            padding: 1.2rem 1.8rem;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            background: #f9f9f9;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-time {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.1rem;
+        }
+
+        .schedule-event {
+            color: #333;
+        }
+
+        /* Hotel Cards */
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hotel-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hotel-header {
+            background: var(--teal);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .hotel-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-address {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hotel-body {
+            padding: 1.5rem;
+        }
+
+        .hotel-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .hotel-price span {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .hotel-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .hotel-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .hotel-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            color: var(--yellow);
+            font-weight: 700;
+        }
+
+        .hotel-cutoff {
+            background: #fff3cd;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        .hotel-link {
+            display: block;
+            background: var(--orange);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .hotel-link:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .award-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-left: 4px solid var(--yellow);
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-name {
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-place {
+            color: var(--orange);
+            font-size: 0.9rem;
+        }
+
+        /* Team Count Banner */
+        .team-banner {
+            background: var(--yellow);
+            color: var(--dark);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 6px solid var(--orange);
+        }
+
+        .team-count {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .team-label {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Advancement Section */
+        .advancement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .advancement-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .advancement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .advancement-count {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .advancement-destination {
+            font-weight: 600;
+            color: var(--teal);
+            font-size: 1.1rem;
+        }
+
+        /* Core Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+
+
+        .value-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sponsors */
+        .sponsors-section {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .sponsor-title {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-bottom: 2rem;
+        }
+
+        .sponsor-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sponsor-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-contact {
+            margin: 1.5rem 0;
+        }
+
+        .footer-contact a {
+            color: var(--yellow);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .schedule-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .hero-details {
+                flex-direction: column;
+            }
+        }
+
+        /* Important Deadlines Alert */
+        .deadline-alert {
+            background: var(--orange);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 4px solid var(--dark);
+        }
+
+        .deadline-alert h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .deadline-list {
+            list-style: none;
+        }
+
+        .deadline-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .deadline-list li:last-child {
+            border-bottom: none;
+        }
+
+        .deadline-list strong {
+            color: var(--yellow);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <img src="UNEARTHED_WEBP_file.webp" alt="UNEARTHED Season Logo" style="max-width: 400px; width: 100%; height: auto; margin-bottom: 2rem; animation: fadeInDown 1s ease-out;">
+              <h2><i>FIRST®</i> LEGO® League Florida State Championship 2026</h2>
+            </div>
+            <div class="hero-details">
+                <div class="hero-detail">
+                    <div class="hero-detail-label">Date</div>
+                    <div class="hero-detail-value">February 20-21, 2026</div>
+                </div>
+                <div class="hero-detail">
+                    <div class="hero-detail-label">Location</div>
+                    <div class="hero-detail-value">Shorecrest Preparatory School</div>
+                </div>
+                <div class="hero-detail">
+                    <div class="hero-detail-label">Teams</div>
+                    <div class="hero-detail-value">55 Teams</div>
+                </div>
+            </div>
+            <div class="cta-container">
+                <a href="#registration" class="cta-button">Register Now</a>
+                <a href="#schedule" class="cta-button secondary">View Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">FLL State Championship 2026</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#volunteers">Volunteers</a></li>
+                <li><a href="#registration">Registration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Important Deadlines -->
+    <section class="section">
+        <div class="deadline-alert">
+            <h4>IMPORTANT DEADLINES</h4>
+            <ul>
+                <li><strong>Registration Survey:</strong> Complete NOW if not already submitted</li>
+                <li><strong>Hotel Reservations:</strong> Book by Friday, February 6, 2026 (11:59 PM)</li>
+                <li><strong>Team Lunches:</strong> Pre-order by February 12, 2026</li>
+                <li><strong>State Championship Shirts:</strong> Pre-order by February 12, 2026</li>
+                <li><strong>Team Roster Upload:</strong> Due Wednesday, February 18, 2026 by Noon</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="section" style="padding-top: .5rem;">
+        <div class="section-header">
+            <h2 class="section-title">About the Championship</h2>
+            <p class="section-subtitle">
+                The Florida Central & West Region proudly hosts the 2025-2026 Florida State Championship for <i>FIRST®</i> LEGO® League Challenge teams. 
+                Join us for two days of innovation, competition, and celebration as Florida's top teams showcase their robots and projects!
+            </p>
+        </div>
+
+        <div class="team-banner">
+            <div class="team-count">55</div>
+            <div class="team-label">Teams Competing for Excellence</div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>What is FLL?</h3>
+                <p>FIRST® LEGO® League (FLL) introduces STEM (science, technology, engineering, and math) to children ages 9-14 through fun, exciting hands-on learning. Participants gain real-world problem-solving experiences through a guided, global robotics program using LEGO® technology. <br> The FLL competition evaluates teams in four key areas:
+Core Values, Innovation Project, Robot Design, and Robot Performance.These areas are weighted equally during the tournament which helps determine the overall ranking of the teams.</p>
+            </div>
+            <div class="info-card">
+                <h3>UNEARTHED Theme</h3>
+                <p>The UNEARTHED theme for the 2025-2026 season of FIRST® LEGO® League invites teams to explore the past, uncover hidden stories, and use STEM to envision a brighter future. Teams will build and code autonomous LEGO Education robots to complete a series of archaeology-themed missions, simulating real-world challenges faced by archaeologists. Additionally, teams invent solutions to real-world problems faced by archeologists. The theme encourages teams to think critically about how the past can inform our future and to develop innovative solutions for the future.</p>
+            </div>
+            <div class="info-card">
+                <h3>Event Information</h3>
+                <p><strong>$225 per team</strong></p>
+                <p>Includes tournament entry, team pit space, practice table access, and team gifts. Additional costs: T-shirts ($15 each) and boxed lunches ($12 each).</p>
+<h3>Schedule</h3>
+<p>Plan your championship weekend with our daily schedule. Please remember this is a draft schedule.</p><br>
+<p>7:15 AM - Team Registration & Pits Open</p>
+<p>8:15 AM - Opening Ceremony</p>
+<p>8:45 AM - Judging and Robot Games</p>
+<p>5:00 PM - Closing Ceremony</p>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 2rem;">
+            <h3 class="section-title" style="font-size: 2rem;">Core Values</h3>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                
+                <div class="value-name">Discovery</div>
+                <div class="value-description">We explore new skills and ideas</div>
+            </div>
+            <div class="value-card">
+                
+                <div class="value-name">Innovation</div>
+                <div class="value-description">We use creativity and persistence to solve problems</div>
+            </div>
+            <div class="value-card">
+                
+                <div class="value-name">Impact</div>
+                <div class="value-description">We apply what we learn to improve our world</div>
+            </div>
+            <div class="value-card">
+                
+                <div class="value-name">Inclusion</div>
+                <div class="value-description">We respect each other and embrace our differences</div>
+            </div>
+            <div class="value-card">
+                
+                <div class="value-name">Teamwork</div>
+                <div class="value-description">We are stronger when we work together</div>
+            </div>
+            <div class="value-card">
+                
+                <div class="value-name">Fun</div>
+                <div class="value-description">We enjoy and celebrate what we do!</div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Location Section -->
+    <section id="location" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Location & Directions</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Venue</h3>
+                <p><strong>Shorecrest Preparatory School</strong></p>
+                <p>5101 1st St NE<br>St. Petersburg, FL 33703</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://www.shorecrest.org/campus" target="_blank" style="color: var(--primary); font-weight: 600;">View Campus Images & Info →</a>
+                </p>
+            </div>
+            <div class="info-card">
+                <h3>Parking</h3>
+                <p>On-campus parking is available for all attendees. Parking attendants will direct you to designated areas upon arrival.</p>
+                <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Free parking for all participants and spectators</p>
+            </div>
+            <div class="info-card">
+                <h3>Getting There</h3>
+                <p>Shorecrest Preparatory School is conveniently located just off I-275 in St. Petersburg, approximately 5 miles from downtown and easily accessible from all major Tampa Bay area highways.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="section" style="background: #f9f9f9;">
+        <div class="section-header">
+            <h2 class="section-title">Hotel Accommodations</h2>
+            <p class="section-subtitle">We've secured special rates at hotels near Shorecrest Prep. All hotels are within 5 miles of the venue.</p>
+        </div>
+
+        <div class="hotel-grid">
+            <!-- Fairfield Inn -->
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-name">Fairfield Inn & Suites</div>
+                    <div class="hotel-address">2575 54th Ave N, St. Petersburg, 33714</div>
+                </div>
+                <div class="hotel-body">
+                    <div class="hotel-price">$179<span>/night + tax</span></div>
+                    <div class="hotel-cutoff">Book by: Friday, February 6, 2026</div>
+                    <ul class="hotel-features">
+                        <li>15 Queen rooms, 10 King rooms</li>
+                        <li>Free parking</li>
+                        <li>Free WiFi</li>
+                        <li>Free hot breakfast</li>
+                    </ul>
+                    <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1757429384642&key=GRP&app=resvlink" target="_blank" class="hotel-link">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Holiday Inn Express -->
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-name">Holiday Inn Express</div>
+                    <div class="hotel-address">2171 54th Ave N, St. Petersburg, 33714</div>
+                </div>
+                <div class="hotel-body">
+                    <div class="hotel-price">$204<span>/night + tax</span></div>
+                    <div class="hotel-cutoff">Book by: 11:59 PM Friday, February 6, 2026</div>
+                    <ul class="hotel-features">
+                        <li>Free parking</li>
+                        <li>Free WiFi</li>
+                        <li>Free breakfast</li>
+                        <li>Next door to Cracker Barrel</li>
+                    </ul>
+                    <a href="https://www.ihg.com/redirect?path=rates&brandCode=EX&localeCode=en&regionCode=1&hotelCode=PIEFL&checkInDate=20&checkInMonthYear=012026&checkOutDate=22&checkOutMonthYear=012026&_PMID=99801505&GPC=FLL&cn=no&adjustMonth=false&showApp=true&monthIndex=00" target="_blank" class="hotel-link">Book Now</a>
+                </div>
+            </div>
+
+            <!-- LaQuinta Inn -->
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-name">LaQuinta Inn</div>
+                    <div class="hotel-address">6638 4th St N, St. Petersburg, 33702</div>
+                </div>
+                <div class="hotel-body">
+                    <div class="hotel-price">$167-$172<span>/night + tax + $5 facility fee</span></div>
+                    <div class="hotel-cutoff">Book by: Friday, February 6, 2026</div>
+                    <ul class="hotel-features">
+                        <li>5 King rooms ($167/night)</li>
+                        <li>15 Double rooms ($172/night)</li>
+                        <li>Free parking</li>
+                        <li>Free WiFi</li>
+                        <li>Free hot breakfast</li>
+                    </ul>
+                    <a href="https://www.wyndhamhotels.com/laquinta/st-petersburg-florida/la-quinta-st-petersburg-northeast/rooms-rates?brand_id=LQ&checkInDate=2/20/2026&checkOutDate=2/22/2026&useWRPoints=false&children=0&groupCode=022026SPO&iata=00093796&adults=1&rooms=1&loc=ChIJQao6aWPmwogR_4vUvANAzAQ&sessionId=1750347896" target="_blank" class="hotel-link">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Quality Inn -->
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-name">Quality Inn</div>
+                    <div class="hotel-address">2595 54th Ave N, St. Petersburg, 33714</div>
+                </div>
+                <div class="hotel-body">
+                    <div class="hotel-price">$142<span>/night + tax</span></div>
+                    <div class="hotel-cutoff">Book by: Friday, February 6, 2026</div>
+                    <ul class="hotel-features">
+                        <li>5 King rooms</li>
+                        <li>20 Queen rooms</li>
+                        <li>Free WiFi</li>
+                        <li>Mini fridge in room</li>
+                    </ul>
+                    <a href="https://www.choicehotels.com/reservations/groups/GG19U9" target="_blank" class="hotel-link">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem; color: #666; line-height: 1.8;">
+            <strong>Note:</strong> Most hotels are clustered around the 54th Avenue North exit from I-275. Additional downtown St. Petersburg hotels are available within 5 miles. Book early as rooms fill quickly!
+        </p>
+    </section>
+
+    <!-- Food Section -->
+    <section id="food" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Food & Beverages</h2>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Pre-Order Team Lunches - $12 Each</h4>
+            <p style="margin-bottom: 1rem;"><strong>Deadline: February 12, 2026</strong></p>
+            <p>Boxed lunch options available for pre-order. Each lunch is $12 and includes:</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Beverage Policy</h3>
+                <p>Students may bring refillable water bottles. Water bottle filling stations will be available throughout the venue.</p>
+                <p style="margin-top: 1rem;"><strong>Outside food and beverages are NOT permitted in competition areas.</strong></p>
+            </div>
+            <div class="info-card">
+                <h3>On-Site Options</h3>
+                <p>Concession stands will be available during the event offering snacks, beverages, and light meals for purchase.</p>
+                <p style="margin-top: 1rem; color: var(--primary);">Cash and card accepted</p>
+            </div>
+            <div class="info-card">
+                <h3>Dietary Accommodations</h3>
+                <p>Please indicate any dietary restrictions or allergies when pre-ordering lunches. We strive to accommodate all needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="section" style="background: #f9f9f9;">
+        <div class="section-header">
+            <h2 class="section-title">Dress Code & Team Attire</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Casual & Creative</h3>
+                <p>Dress for all teams is casual. We encourage your team to adopt a fun and unique team identity that showcases your team spirit, engineering experience, or project theme.</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">Think smart marketing and HAVE FUN!</p>
+            </div>
+            <div class="info-card">
+                <h3>State Championship Shirts</h3>
+                <p><strong>Pre-order by: February 12, 2026</strong></p>
+                <p><strong>Price: $15 each</strong></p>
+                <p style="margin-top: 1rem;">Pick up your shirts at the Championship and decorate them with fabric markers provided at the event!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Check-in Section -->
+    <section id="checkin" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Team Check-In</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Check-In Process</h3>
+                <p><strong>Saturday, February 21: 7:15 AM - 7:45 AM</strong></p>
+                <p style="margin-top: 1rem;">Only one coach needs to check in. Spectators and parents can set up tents, tables, and chairs outdoors in the Team Tailgate Area unless they are registered event volunteers. After the coach has checked in, team volunteers should go directly to the team pit.</p>
+            </div>
+            <div class="info-card">
+                <h3>Required Documents</h3>
+                <p><strong>Team Roster Due: Wednesday, February 18, 2026 by Noon</strong></p>
+                <ul>
+                    <li>Team roster from FIRST Dashboard</li>
+                    <li>Consent & Release forms for all team members</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>What You'll Receive</h3>
+                <ul>
+                    <li>2 Coach Badges</li>
+                    <li>1 Spectator Wristbands</li>
+                    <li>Team Schedule Printout</li>
+                    <li>State Championship Gift</li>
+		    <li>Team Wristbands</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 2rem;">
+            <h4>Early Check-In Available!</h4>
+            <p><strong>Friday, February 20: 4:00 PM - 8:00 PM</strong></p>
+            <p>Teams can check in early and set up their pits on Friday evening to get ready for the big day! Feel free to visit St. Pete beaches and otehr attractions in the area.</p>
+        </div>
+    </section>
+
+    <!-- Pit Area and Tailgating-->
+    <section id="pit" class="section" style="background: #f9f9f9;">
+        <div class="section-header">
+            <h2 class="section-title">Pit Area and Tailgating Area</h2>
+            <p class="section-subtitle">The Pit is your team's home base when working on the robot and coding during the competition. The Pit is for coaches and team members only. The Pit is not the space for teams to congregate all day long. The Tailgating Area is for teams to have down time during the tournament. Parents and guaardians can set up tents, tables, and chairs outdoors. Create interactive displays and encourage teams to engage at your tailgating area.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Pit Area</h3>
+                <p>The Pit Area will have charging stations. There is no              
+                need for teams to bring extension cords or surge 
+                protections. There will also be an area for Practice 
+                Tables. Teams are not allowed to bring Field Kits, 			Mission Mats or Models in the Pit. Each Pit space will   
+                have:</p>
+                <ul>
+                    <li>One 6ft table</li>
+                    <li>At least 2 chairs</li>
+                    <li>Robot and supplies</li>
+                    <li>Laptop and power cord</li>
+                    <li>USB download cable (no Bluetooth!)</li>
+                    <li>Robot transport container</li>
+                </ul>
+            </div>
+                <div class="info-card">
+                <h3>Tailgating Area</h3>
+                <ul>
+                    <li>Tents
+                    <li>Tables and chairs
+                    <li>Coolers with non-alcoholic beverages
+                    <li>Snacks, lunch, plasticware,etc.
+                    <li>Interactive activities
+                    <li>Team display/banner</li>
+                    <li>Trash bags</li>
+                    <li>Team giveaways (optional)</li>
+                    <li>Games, balls, puzzles, books,etc.
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Tailgate Decoration Contest</h3>
+                <p>Decorate your Tailgating Area to showcase your team identity! Bring:</p>
+                <ul>
+                    <li>Team banners</li>
+                    <li>Display boards</li>
+                    <li>Project posters</li>
+                    <li>Team giveaways</li>
+                </ul>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">Make your tailgating area memorable!</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Practice Tables Available</h4>
+            <ul>
+                <li>Sign up with Practice Table Manager</li>
+                <li>6-minute slots (one five-minute run)</li>
+                <li>One slot at a time per team</li>
+                <li>Reset table for next team</li>
+                <li>Be gracious and help other teams!</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <p class="section-subtitle">Celebrating excellence in robotics and innovation</p>
+        </div>
+
+        <div class="awards-grid">
+            <div class="award-item">
+                <div class="award-name">Champion's Award</div>
+                <div class="award-place">1st, Finalist, Finalist</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Innovation Project Award</div>
+                <div class="award-place">1st, Finalist, Finalist</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Robot Design Award</div>
+                <div class="award-place">1st, Finalist, Finalist</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Core Values Award</div>
+                <div class="award-place">1st, Finalist, Finalist</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Robot Performance</div>
+                <div class="award-place">1st, 2nd, 3rd Place</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Engineering Excellence Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Breakthrough Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Rising All-Star Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Motivate Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Peer Award (2)</div>
+                <div class="award-place">Recogniton by Teams</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Coach/Mentor Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+            <div class="award-item">
+                <div class="award-name">Volunteer Award</div>
+                <div class="award-place">Special Recognition</div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 2rem;">
+            <h3 class="section-title" style="font-size: 2rem;">Advancement Opportunities</h3>
+            <p class="section-subtitle">Top Florida teams advance to prestigious international competitions</p>
+        </div>
+
+        <div class="advancement-grid">
+            <div class="advancement-card">
+                <div class="advancement-count">2</div>
+                <div class="advancement-destination">World Festival</div>
+            </div>
+            <div class="advancement-card">
+                <div class="advancement-count">1</div>
+                <div class="advancement-destination">Canada Invitational</div>
+            </div>
+            <div class="advancement-card">
+                <div class="advancement-count">2</div>
+                <div class="advancement-destination">California Invitational</div>
+            </div>
+            <div class="advancement-card">
+                <div class="advancement-count">3</div>
+                <div class="advancement-destination">Massachusetts Invitational</div>
+            </div>
+            <div class="advancement-card">
+                <div class="advancement-count">1</div>
+                <div class="advancement-destination">Georgia Invitational</div>
+            </div>
+            <div class="advancement-card">
+                <div class="advancement-count">1</div>
+                <div class="advancement-destination">Mexico Invitational</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteers Section -->
+    <section id="volunteers" class="section" style="background: #f9f9f9;">
+        <div class="section-header">
+            <h2 class="section-title">Volunteer Requirements</h2>
+            <p class="section-subtitle">Help make this championship possible!</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>MANDATORY TEAM REQUIREMENT</h4>
+            <p style="margin-top: 1rem;">Every team must provide at least <strong>one adult volunteer (18+)</strong> to serve as the team's Queuer. Teams that don't meet this requirement will not receive their registration packet and schedule.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Queuer Responsibilities</h3>
+                <p>Queuers manage team traffic and maintain event pace:</p>
+                <ul>
+                    <li><strong>For Judging:</strong> Ensure team arrives 5 minutes early and enters room on time</li>
+                    <li><strong>For Robot Game:</strong> Get team to competition area 5 minutes before match</li>
+                    <li>Track multiple schedules simultaneously</li>
+                    <li>Line up team in proper tournament table lane</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Mandatory Meeting</h3>
+                <p><strong>Saturday, February 21: 7:45 AM</strong></p>
+                <p><strong>Location:</strong> Volunteer Room</p>
+                <p style="margin-top: 1rem;">ALL queuers must attend this meeting. If you're a coach serving as your team's queuer, notify organizers immediately and still sign up at www.firstinspires.org</p>
+            </div>
+            <div class="info-card">
+                <h3>Benefits</h3>
+                <ul>
+                    <li>Work alongside your team</li>
+                    <li>High visibility role</li>
+                    <li>Contribute to event success</li>
+                    <li>Observe matches</li>
+                    <li>Build leadership skills</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">Physically demanding: Must be able to stand for extended periods</p>
+            </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 2rem;">
+            <h3>How to Sign Up</h3>
+            <p>Register your volunteer on your <i>FIRST</i> Dashboard at <strong>www.firstinspires.org</strong></p>
+            <p style="margin-top: 1rem;">Questions? Contact the Regional Volunteer Coordinator or email the Program Delivery Partners.</p>
+        </div>
+    </section>
+
+    <!-- Spectators Section -->
+    <section id="spectators" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Spectator Information</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>What's Open to Public</h3>
+                <p>The Robot Game competition area is <strong>FREE and open to the public!</strong></p>
+                <p style="margin-top: 1rem;">Spectators are encouraged to:</p>
+                <ul>
+                    <li>Watch robot matches</li>
+                    <li>Visit team tailgating area</li>
+                    <li>Talk to teams about their projects</li>
+                    <li>Celebrate with teams</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Restricted Areas</h3>
+                <p>Please respect team-only areas:</p>
+                <ul>
+                    <li>Team Pits</li>
+                    <li>Judging areas (team discretion)</li>
+                    <li>Competition floor/queuing area</li>
+                    <li>Behind tournament tables</li>
+                </ul>
+                <p style="margin-top: 1rem; font-weight: 600;">Only registered team members, coaches, and volunteers allowed in restricted areas</p>
+            </div>
+            <div class="info-card">
+                <h3>Seating & Space</h3>
+                <p>Bleacher seating is available at the venue. We  
+                   encourage families to also:</p>
+                <ul>
+                    <li>Visit team tailgating areas between matches</li>
+                    <li>Bring collapsible chairs for outdoor seating</li>
+                    <li>Volunteer and get a behind the scenes view</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section" style="background: var(--yellow); color: var(--dark); padding: 3rem 2rem;">
+        <div class="section-header">
+            <h2 class="section-title" style="color: var(--dark);">Registration Information</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="highlight-box" style="background: var(--dark); color: white; border-color: var(--orange);">
+                <h4>Registration Fee: $225 per Team</h4>
+                <p style="margin-top: 1rem;">Includes tournament entry, pit space, practice tables, and team gifts</p>
+            </div>
+
+            <div style="margin: 1.5rem 0;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--dark);">Additional Items Available</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; border: 4px solid var(--orange);">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;"></div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--orange);">$15</div>
+                        <div>Championship T-Shirts</div>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 10px; border: 4px solid var(--teal);">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;"></div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--teal);">$12</div>
+                        <div>Boxed Lunches</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="#" class="cta-button">Complete Registration Survey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors-section">
+        <h2 class="sponsor-title">Thank You to Our Program Delivery Organization</h2>
+        <div class="sponsor-grid">
+            <div class="sponsor-logo">FUNducation®</div>
+        </div>
+        <h3 style="font-family: 'Orbitron', sans-serif; text-align: center; font-size: 1.5rem; color: var(--yellow); margin-top: 2rem; margin-bottom: 2rem;">Program Delivery Partners</h3>
+        <div class="sponsor-grid">
+            <div class="sponsor-logo">Desh Bagley</div>
+            <div class="sponsor-logo">Rae Vinson</div>
+            <div class="sponsor-logo">Saru Selvan</div>
+            <div class="sponsor-logo">Neirda Thompson-Pemberton</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3 style="font-family: 'Orbitron', sans-serif; color: var(--yellow); margin-bottom: 1rem;">Contact Information</h3>
+            <div class="footer-contact">
+                <p>For questions about the FLL State Championship, please contact:</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Florida Central & West Region</strong><br>
+                    Email: <a href="mailto:suncoastfll&#64;gmail&#46;com">
+  suncoastfll&#64;gmail&#46;com
+</a>
+                </p>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p style="margin: 0.5rem 0;">FLL Florida State Championship 2026</p>
+                <p style="margin: 0.5rem 0;">UNEARTHED presented by FUNducation</p>
+                <p style="margin: 0.5rem 0;">February 21, 2026 | Shorecrest Preparatory School</p>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">FIRST®, FIRST® LEGO
